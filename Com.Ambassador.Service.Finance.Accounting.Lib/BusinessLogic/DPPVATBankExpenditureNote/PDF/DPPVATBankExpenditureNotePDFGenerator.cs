@@ -24,7 +24,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.DPPVATBank
 
         public static MemoryStream Generate(DPPVATBankExpenditureNoteDto data, int timezoneOffset)
         {
-            var document = new Document(PageSize.A4.Rotate(), 20, 20, 20, 20);
+            var document = new Document(PageSize.A4, 20, 20, 20, 20);
             var stream = new MemoryStream();
             var writer = PdfWriter.GetInstance(document, stream);
             document.Open();
@@ -153,11 +153,12 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.DPPVATBank
             var total = 0.0;
             foreach (var item in data.Items)
             {
-                cellCenter.Phrase = new Phrase(rowNumber.ToString(), _normalFont);
+                var number = rowNumber++; 
+                cellCenter.Phrase = new Phrase(number.ToString(), _normalFont);
                 table.AddCell(cellCenter);
                 cellLeft.Phrase = new Phrase(item.InternalNote.DocumentNo, _normalFont);
                 table.AddCell(cellLeft);
-                cellLeft.Phrase = new Phrase(string.Join("\n", item.InternalNote.Items.Select(element => $"- {element.Invoice.Category.Name}")), _subHeaderFont);
+                cellLeft.Phrase = new Phrase(string.Join("\n", item.InternalNote.Items.Select(element => $"- {element.Invoice.Category.Name}").First()), _subHeaderFont);
                 table.AddCell(cellLeft);
                 cellCenter.Phrase = new Phrase(item.InternalNote.Currency.Code, _subHeaderFont);
                 table.AddCell(cellCenter);
@@ -224,28 +225,28 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.DPPVATBank
             table.AddCell(cellCenter);
             cellCenter.Colspan = 1;
 
-            cellLeft.Phrase = new Phrase("PT DAN LIRIS", _subHeaderFont);
+            cellLeft.Phrase = new Phrase("PT. AMBASSADOR GARMINDO", _subHeaderFont);
             table.AddCell(cellLeft);
             cellLeft.Phrase = new Phrase("Tanggal", _subHeaderFont);
             table.AddCell(cellLeft);
             cellLeft.Phrase = new Phrase($": {data.Date.AddHours(timezoneOffset).ToString("dd/MMMM/yyyy")}", _subHeaderFont);
             table.AddCell(cellLeft);
 
-            cellLeft.Phrase = new Phrase("Kel. Banaran, Kec. Grogol", _subHeaderFont);
+            cellLeft.Phrase = new Phrase("Banaran, Grogol, Sukoharjo, Jawa Tengah", _subHeaderFont);
             table.AddCell(cellLeft);
             cellLeft.Phrase = new Phrase("NO", _subHeaderFont);
             table.AddCell(cellLeft);
             cellLeft.Phrase = new Phrase($": {data.DocumentNo}", _subHeaderFont);
             table.AddCell(cellLeft);
 
-            cellLeft.Phrase = new Phrase("Sukoharjo - 57100", _subHeaderFont);
+            cellLeft.Phrase = new Phrase("57552", _subHeaderFont);
             table.AddCell(cellLeft);
             cellLeft.Phrase = new Phrase("Dibayarkan ke", _subHeaderFont);
             table.AddCell(cellLeft);
             cellLeft.Phrase = new Phrase($": {data.Supplier.Name}", _subHeaderFont);
             table.AddCell(cellLeft);
 
-            cellLeft.Phrase = new Phrase("", _subHeaderFont);
+            cellLeft.Phrase = new Phrase("Telp(0271) 732888, 7652931", _subHeaderFont);
             table.AddCell(cellLeft);
             cellLeft.Phrase = new Phrase("Bank", _subHeaderFont);
             table.AddCell(cellLeft);

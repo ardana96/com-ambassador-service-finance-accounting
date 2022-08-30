@@ -50,11 +50,13 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.PDFTemplates
             cellHeaderCS2.HorizontalAlignment = Element.ALIGN_CENTER;
             headerTable.AddCell(cellHeaderCS2);
 
-            cellHeaderBody.Phrase = new Phrase("PT. Ambassador", normal_font);
+            cellHeaderBody.Phrase = new Phrase("PT. AMBASSADOR GARMINDO", normal_font);
             headerTable1.AddCell(cellHeaderBody);
-            cellHeaderBody.Phrase = new Phrase("Kel. Banaran, Kec. Grogol", normal_font);
+            cellHeaderBody.Phrase = new Phrase("Banaran, Grogol, Sukoharjo, Jawa Tengah", normal_font);
             headerTable1.AddCell(cellHeaderBody);
-            cellHeaderBody.Phrase = new Phrase("Sukoharjo - 57100", normal_font);
+            cellHeaderBody.Phrase = new Phrase("57552", normal_font);
+            headerTable1.AddCell(cellHeaderBody);
+            cellHeaderBody.Phrase = new Phrase("Telp (0271)732888, 7652931", normal_font);
             headerTable1.AddCell(cellHeaderBody);
 
             cellHeader1.AddElement(headerTable1);
