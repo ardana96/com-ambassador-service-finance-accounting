@@ -708,7 +708,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.Services.P
             headerTable1.AddCell(cellHeaderBody);
             cellHeaderBody.Phrase = new Phrase("Kel. Banaran, Kec. Grogol", normal_font);
             headerTable1.AddCell(cellHeaderBody);
-            cellHeaderBody.Phrase = new Phrase("Sukoharjo - 57100", normal_font);
+            cellHeaderBody.Phrase = new Phrase("Sukoharjo - 57552", normal_font);
             headerTable1.AddCell(cellHeaderBody);
 
             cellHeader1.AddElement(headerTable1);
