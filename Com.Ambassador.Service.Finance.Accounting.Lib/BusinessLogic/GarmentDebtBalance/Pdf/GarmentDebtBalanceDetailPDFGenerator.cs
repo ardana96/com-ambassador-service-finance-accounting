@@ -56,7 +56,8 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.GarmentDeb
 
         private static void SetTable(Document document, List<GarmentDebtBalanceDetailDto> data, int timezoneOffset)
         {
-            var table = new PdfPTable(19)
+            //var table = new PdfPTable(19)
+            var table = new PdfPTable(18)
             {
                 WidthPercentage = 100,
                 HorizontalAlignment = Element.ALIGN_LEFT
@@ -89,8 +90,8 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.GarmentDeb
 
             cellCenterWithBackground.Phrase = new Phrase("SUPPLIER", _subHeaderFont);
             table.AddCell(cellCenterWithBackground);
-            cellCenterWithBackground.Phrase = new Phrase("NO. BP BESAR", _subHeaderFont);
-            table.AddCell(cellCenterWithBackground);
+            //cellCenterWithBackground.Phrase = new Phrase("NO. BP BESAR", _subHeaderFont);
+            //table.AddCell(cellCenterWithBackground);
             cellCenterWithBackground.Phrase = new Phrase("NO. BP KECIL", _subHeaderFont);
             table.AddCell(cellCenterWithBackground);
             cellCenterWithBackground.Phrase = new Phrase("NO. SJ", _subHeaderFont);
@@ -130,8 +131,8 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.GarmentDeb
             {
                 cellLeft.Phrase = new Phrase($"{datum.SupplierCode} - {datum.SupplierName}", _normalFont);
                 table.AddCell(cellLeft);
-                cellCenter.Phrase = new Phrase(datum.BillNo, _normalFont);
-                table.AddCell(cellCenter);
+                //cellCenter.Phrase = new Phrase(datum.BillNo, _normalFont);
+                //table.AddCell(cellCenter);
                 cellCenter.Phrase = new Phrase(datum.PaymentBill, _normalFont);
                 table.AddCell(cellCenter);
                 cellCenter.Phrase = new Phrase(datum.DeliveryOrderNo, _normalFont);
