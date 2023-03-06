@@ -157,7 +157,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.GarmentDis
             {
                 var sheet = package.Workbook.Worksheets.Add(item.Value);
 
-                sheet.Cells["A1"].Value = "PT.Dan Liris";
+                sheet.Cells["A1"].Value = "PT.Ambassador Garmindo";
 
                 sheet.Cells["A2"].Value = "LAPORAN EKSPEDISI BUKTI PEMBAYARAN DISPOSISI";
 
