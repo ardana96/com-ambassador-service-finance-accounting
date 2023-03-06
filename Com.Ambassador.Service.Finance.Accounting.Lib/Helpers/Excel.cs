@@ -41,7 +41,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.Helpers
             {
                 var sheet = package.Workbook.Worksheets.Add(item.Value);
 
-                sheet.Cells["A1"].Value = "PT.Dan Liris";
+                sheet.Cells["A1"].Value = "PT.Ambassador Garmindo";
 
                 sheet.Cells["A2"].Value = "LAPORAN EKSPEDISI BUKTI PEMBAYARAN DISPOSISI";
 
@@ -68,7 +68,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.Helpers
             {
                 var sheet = package.Workbook.Worksheets.Add(item.Value);
 
-                sheet.Cells["A1"].Value = "PT.Dan Liris";
+                sheet.Cells["A1"].Value = "PT.Ambassador Garmindo";
                 sheet.Cells["A1:D1"].Merge = true;
 
                 sheet.Cells["A2"].Value = title;
