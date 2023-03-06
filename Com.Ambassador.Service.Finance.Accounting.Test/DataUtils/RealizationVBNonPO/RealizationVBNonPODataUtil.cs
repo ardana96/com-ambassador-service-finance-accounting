@@ -609,7 +609,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Test.DataUtils.RealizationVB
                             name = "name",
                             rate = 1
                         },
-                        IncomeTaxBy = "Dan Liris"
+                        IncomeTaxBy = "Ambassador Garmindo"
                     }
                 }
             };
