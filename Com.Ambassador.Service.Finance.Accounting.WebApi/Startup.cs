@@ -104,6 +104,8 @@ using Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.Interfaces.Rep
 using Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.Services.Reports.LocalSalesDebtorReport;
 using Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.GarmentFinance.Reports.LocalDebtorCard;
 using Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.GarmentFinance.Reports.LocalBankCashReceiptMonthlyRecap;
+using Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.Reports.GarmentExportBankReceiptJournal;
+using Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.Reports.GarmentLocalBankReceiptJournal;
 
 namespace Com.Ambassador.Service.Finance.Accounting.WebApi
 {
@@ -209,7 +211,9 @@ namespace Com.Ambassador.Service.Finance.Accounting.WebApi
                 .AddTransient<ILocalSalesDebtorReportService, LocalSalesDebtorReportService>()
                 .AddTransient<IGarmentFinanceLocalDebtorCardReportService, GarmentFinanceLocalDebtorCardReportService>()
                 .AddTransient<IGarmentFinanceExportSalesOutstandingReportService, GarmentFinanceExportSalesOutstandingReportService>()
-                .AddTransient<IGarmentFinanceLocalBankCashReceiptMonthlyRecapService, GarmentFinanceLocalBankCashReceiptMonthlyRecapService>();
+                .AddTransient<IGarmentFinanceLocalBankCashReceiptMonthlyRecapService, GarmentFinanceLocalBankCashReceiptMonthlyRecapService>()
+                .AddTransient<IGarmentExportBankReceiptJournalService, GarmentExportBankReceiptJournalService>()
+                .AddTransient<IGarmentLocalBankReceiptJournalService, GarmentLocalBankReceiptJournalService>();
         }
 
 
