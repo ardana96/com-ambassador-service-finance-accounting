@@ -324,11 +324,11 @@ namespace Com.Ambassador.Service.Finance.Accounting.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
-            using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
-            {
-                var context = serviceScope.ServiceProvider.GetService<FinanceDbContext>();
-                context.Database.Migrate();
-            }
+            //using (var serviceScope = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            //{
+            //    var context = serviceScope.ServiceProvider.GetService<FinanceDbContext>();
+            //    context.Database.Migrate();
+            //}
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>
