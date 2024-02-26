@@ -3,6 +3,7 @@ using iTextSharp.text;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 
 namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.VBRealizationDocument
 {
@@ -50,15 +51,24 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.VBRealizat
             {
                 int CountItemsError = 0;
                 string ItemsError = "[";
-
+                List<string> spbNo = new List<string>();
                 foreach (var item in Items)
                 {
                     ItemsError += "{ ";
-
+                    
                     if (item.UnitPaymentOrder == null || item.UnitPaymentOrder.Id.GetValueOrDefault() <= 0)
                     {
                         CountItemsError++;
                         ItemsError += "'UnitPaymentOrder': 'SPB harus diisi', ";
+                    }
+                    if (spbNo.Count == 0)
+                    {
+                        spbNo.Add(item.UnitPaymentOrder.No);
+                    }
+                    else if (spbNo.Contains(item.UnitPaymentOrder.No))
+                    {
+                        CountItemsError++;
+                        ItemsError += "'UnitPaymentOrder': 'No SPB duplikat', ";
                     }
 
                     ItemsError += "}, ";
