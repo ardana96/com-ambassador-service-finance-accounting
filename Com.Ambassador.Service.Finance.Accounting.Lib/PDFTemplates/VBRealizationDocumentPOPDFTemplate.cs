@@ -515,14 +515,14 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.PDFTemplates
                 headerTable3a.AddCell(cellform);
 
                 // Beban Unit Item
-                cellHeaderBody.Colspan = 1;
+                cellHeaderBody.Colspan = 2;
                 if (item.Key == 0)
                 {
                     cellHeaderBody.Phrase = new Phrase("......", normal_font_8);
                 }
                 else
                 {
-                    cellHeaderBody.Phrase = new Phrase(item.First().UnitName, normal_font_8);
+                    cellHeaderBody.Phrase = new Phrase(item.First().DivisionName + " - " + item.First().UnitName, normal_font_8);
                 }
                 cellHeaderBody.HorizontalAlignment = Element.ALIGN_LEFT;
                 headerTable3a.AddCell(cellHeaderBody);
