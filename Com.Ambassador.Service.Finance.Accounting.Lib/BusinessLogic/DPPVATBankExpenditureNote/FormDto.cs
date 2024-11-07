@@ -14,6 +14,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.DPPVATBank
         public double Amount { get; set; }
         public DateTimeOffset? Date { get; set; }
         public List<FormItemDto> Items { get; set; }
+        public string Remark { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

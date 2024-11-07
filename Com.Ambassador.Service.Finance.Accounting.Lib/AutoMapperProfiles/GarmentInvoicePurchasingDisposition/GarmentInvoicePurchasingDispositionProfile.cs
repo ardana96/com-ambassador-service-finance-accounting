@@ -35,6 +35,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.AutoMapperProfiles.Garme
                 .ForPath(d => d.SupplierName, opt => opt.MapFrom(s => s.Supplier.Name))
                 .ForPath(d => d.SupplierName, opt => opt.MapFrom(s => s.Supplier.Name))
                 .ForPath(d => d.InvoiceNo, opt => opt.MapFrom(s => s.PaymentDispositionNo))
+                .ForPath(d => d.DiffRemark, opt => opt.MapFrom(s => s.DiffRemark))
                 .ReverseMap()
                 ;
 

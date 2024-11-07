@@ -13,7 +13,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.Models.DPPVATBankExpendi
 
         }
 
-        public DPPVATBankExpenditureNoteModel(string documentNo, int bankAccountId, string bankAccountNumber, string bankName, string bankAccountingCode, int currencyId, string currencyCode, double currencyRate, int supplierId, string supplierName, bool isImportSupplier, string bgCheckNo, double amount, DateTimeOffset date, string bankCurrencyCode, int bankCurrencyId, double bankCurrencyRate)
+        public DPPVATBankExpenditureNoteModel(string documentNo, int bankAccountId, string bankAccountNumber, string bankName, string bankAccountingCode, int currencyId, string currencyCode, double currencyRate, int supplierId, string supplierName, bool isImportSupplier, string bgCheckNo, double amount, DateTimeOffset date, string bankCurrencyCode, int bankCurrencyId, double bankCurrencyRate, string remark)
         {
             DocumentNo = documentNo;
             BankAccountId = bankAccountId;
@@ -32,6 +32,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.Models.DPPVATBankExpendi
             BGCheckNo = bgCheckNo;
             Amount = amount;
             Date = date;
+            Remark = remark;
         }
 
         [MaxLength(32)]
@@ -60,8 +61,9 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.Models.DPPVATBankExpendi
         public double Amount { get; private set; }
         public DateTimeOffset Date { get; private set; }
         public bool IsPosted { get; private set; }
+        public string Remark { get; private set; }
 
-        public void UpdateData(double amount, int supplierId, bool isImportSupplier, string supplierName, string bgCheckNo, DateTimeOffset date, double currencyRate)
+        public void UpdateData(double amount, int supplierId, bool isImportSupplier, string supplierName, string bgCheckNo, DateTimeOffset date, double currencyRate, string remark)
         {
             Amount = amount;
             SupplierId = supplierId;
@@ -70,6 +72,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.Models.DPPVATBankExpendi
             BGCheckNo = bgCheckNo;
             Date = date;
             CurrencyRate = currencyRate;
+            Remark = remark;
         }
 
         public void Posted()
