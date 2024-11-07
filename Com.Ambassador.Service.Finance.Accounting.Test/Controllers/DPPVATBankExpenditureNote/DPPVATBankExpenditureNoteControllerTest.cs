@@ -633,7 +633,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Test.Controllers.DPPVATBankE
             var service = new Mock<IDPPVATBankExpenditureNoteService>();
             // , List< DPPVATBankExpenditureNoteItemModel > items, List<DPPVATBankExpenditureNoteDetailModel> details
 
-            DPPVATBankExpenditureNoteModel model = new DPPVATBankExpenditureNoteModel("documentNo", 1, "bankAcountNumber", "bankName", "bankAccountingCode", 1, "IDR", 1, 1, "supplierName", false, "bgCheckNo", 1, DateTimeOffset.Now, "IDR", 1, 1);
+            DPPVATBankExpenditureNoteModel model = new DPPVATBankExpenditureNoteModel("documentNo", 1, "bankAcountNumber", "bankName", "bankAccountingCode", 1, "IDR", 1, 1, "supplierName", false, "bgCheckNo", 1, DateTimeOffset.Now, "IDR", 1, 1, "remark");
             List<DPPVATBankExpenditureNoteItemModel> items = new List<DPPVATBankExpenditureNoteItemModel>()
             {
 
@@ -668,7 +668,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Test.Controllers.DPPVATBankE
             var service = new Mock<IDPPVATBankExpenditureNoteService>();
             // , List< DPPVATBankExpenditureNoteItemModel > items, List<DPPVATBankExpenditureNoteDetailModel> details
 
-            DPPVATBankExpenditureNoteModel model = new DPPVATBankExpenditureNoteModel("documentNo", 1, "bankAcountNumber", "bankName", "bankAccountingCode", 1, "IDR", 1, 1, "supplierName", false, "bgCheckNo", 1, DateTimeOffset.Now, "IDR", 1, 1);
+            DPPVATBankExpenditureNoteModel model = new DPPVATBankExpenditureNoteModel("documentNo", 1, "bankAcountNumber", "bankName", "bankAccountingCode", 1, "IDR", 1, 1, "supplierName", false, "bgCheckNo", 1, DateTimeOffset.Now, "IDR", 1, 1, "remark");
             List<DPPVATBankExpenditureNoteItemModel> items = new List<DPPVATBankExpenditureNoteItemModel>()
             {
 

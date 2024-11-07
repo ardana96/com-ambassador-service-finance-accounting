@@ -35,6 +35,8 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.Models.GarmentInvoicePur
         public string ChequeNo { get;  set; }
         public string PaymentType { get;  set; }
         public bool IsPosted { get; set; }
+        public double DiffAmount { get; set; }
+        public string DiffRemark { get; set; }
         public virtual List<GarmentInvoicePurchasingDispositionItemModel> Items { get; set; }
         public void SetIsPosted(string username, string userAgent)
         {
