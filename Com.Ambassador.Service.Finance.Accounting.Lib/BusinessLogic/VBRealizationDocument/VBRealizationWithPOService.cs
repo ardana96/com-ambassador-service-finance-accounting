@@ -402,7 +402,7 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.BusinessLogic.VBRealizat
             var model = _dbContext.VBRealizationDocuments.FirstOrDefault(entity => entity.Id == id);
             model.UpdatePosition(VBRealizationPosition.Purchasing, _identityService.Username, UserAgent);
             model.SetRemark(form.Remark);
-
+            model.SetReasonForDelay(form.ReasonForDelay);
             if (form.VBRequestDocument != null && form.VBRequestDocument.Id.GetValueOrDefault() > 0)
             {
                 var vbRequest = _dbContext.VBRequestDocuments.FirstOrDefault(entity => entity.Id == form.VBRequestDocument.Id.GetValueOrDefault());
