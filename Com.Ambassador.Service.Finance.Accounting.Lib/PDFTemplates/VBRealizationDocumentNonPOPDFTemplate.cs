@@ -103,7 +103,8 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.PDFTemplates
 
             // Document title
             cellHeaderBody2.Colspan = 6;
-            cellHeaderBody2.Phrase = new Phrase("REALISASI VB TANPA PO", bold_font);
+            //cellHeaderBody2.Phrase = new Phrase("REALISASI VB TANPA PO", bold_font);
+            cellHeaderBody2.Phrase = new Phrase("REALISASI VB CASH", bold_font);
             headerTable3.AddCell(cellHeaderBody2);
 
             // Document number
