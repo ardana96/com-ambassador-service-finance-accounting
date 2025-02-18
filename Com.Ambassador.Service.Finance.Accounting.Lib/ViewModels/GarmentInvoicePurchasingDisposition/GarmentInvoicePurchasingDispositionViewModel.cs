@@ -25,8 +25,9 @@ namespace Com.Ambassador.Service.Finance.Accounting.Lib.ViewModels.GarmentInvoic
         public double CurrencyRate { get; set; }
         public bool IsPosted { get; set; }
 		public string InvoiceNo { get; set; }
-
-		public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        public double DiffAmount { get; set; }
+        public string DiffRemark { get; set; }
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
             if (this.AccountBank == null || this.AccountBank.Id == 0)
             {
